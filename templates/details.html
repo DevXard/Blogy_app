@@ -1,17 +1,25 @@
 {% extends 'base.html' %}
 
 {% block details %}
+    <div class="container-fluid " >
 
-    <ul>
-        <li>Id: {{user.id}}</li>
-        <li>First Name: {{user.first_name}}</li>
-        <li>Last Name: {{user.last_name}}</li>
-        <li>Image: {{user.image_url}}</li>
-    </ul>
+    
+    <div class="card" style="width: 18rem;">
+        <img src="{{user.image_url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{user.first_name}} {{user.last_name}}</h5>
+          <p class="card-text">Hi my name is {{user.first_name}}</p>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          <div class="d-flex justify-content-between">
+            <a class="btn btn-primary " href="/users/{{user.id}}/edit">Edit</a>
+            <form  action="/users/{{user.id}}/delete" method="POST">
+              <button class="btn btn-danger ">Delete</button>
+            </form>
+          </div>
 
-    <a href="/users/{{user.id}}/edit">Edit</a>
-    <form action="/users/{{user.id}}/delete" method="POST">
-        <button>Delete</button>
-    </form>
+        </div>
+      </div>
+    </div>
+   
 
 {% endblock %}
