@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block details %}
+  <h1>{{post.title}}</h1>
+
+  <p class="container font-monospace">{{post.content}}</p>
+   
+  <h5>By {{post.use.first_name}} {{post.use.last_name}}</h5>
+
+  <div class="d-flex m-3">
+      <a class="btn btn-outline-primary m-1" href="/users/{{post.use.id}}">Cancel</a>
+      <a class="btn btn-primary m-1" href="/posts/{{post.id}}/edit">Edit</a>
+      <form action="/posts/{{post.id}}/delete" method="POST">
+          <button class="btn btn-danger m-1">Delete</button>
+      </form>
+      
+  </div>
+
+{% endblock %}

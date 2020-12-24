@@ -10,7 +10,7 @@
     <button>Submit</button>
 </form> -->
 
-<form class="container row g-3 mb-3">
+<form class="container row g-3 mb-3" action="/users/{{user.id}}/edit" method="POST">
     <div class="col-md-12">
       <!-- <label for="inputEmail4" class="form-label">Email</label> -->
       <input type="text" name="first_name" class="form-control" placeholder="{{user.first_name}}">
