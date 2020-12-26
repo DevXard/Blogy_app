@@ -2,8 +2,10 @@
 
 {% block content %}
 <h1>All Users</h1>
+<a href="/tags">Tags</a>
 
 <div class="container">
+
 <ul class="row justify-content-md-center ">
     {% for user in users %}
         <li class="col col-lg-2 list-group-item list-group-item-action list-group-item-success "> <a href="/users/{{user.id}}">{{user.first_name}}</a> </li>

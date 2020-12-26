@@ -19,6 +19,15 @@
         </div>
       </div>    
 
+      <div class=" row ">
+        {% for tag in tags %}
+        <div class="form-check form-check-inline">
+        <input id="{{tag.name}}" name="Tags" value="{{tag.id}}" type="checkbox">
+        <label for="{{tag.name}}">{{tag.name}}</label>
+      </div>
+        {% endfor %}
+      </div>
+
       <div class="container d-flex justify-content-end ">
        <a class="btn btn-outline-primary m-1" href="/posts/{{post.id}}">Cancel</a>
         <button class="btn btn-success m-1">Save</button>

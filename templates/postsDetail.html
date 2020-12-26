@@ -6,6 +6,12 @@
   <p class="container font-monospace">{{post.content}}</p>
    
   <h5>By {{post.use.first_name}} {{post.use.last_name}}</h5>
+  <h3>Tags:
+    {% for tag in tags %}
+    <span>{{tag.name}}</span>
+  {% endfor %}
+  </h3>
+  
 
   <div class="d-flex m-3">
       <a class="btn btn-outline-primary m-1" href="/users/{{post.use.id}}">Cancel</a>
@@ -15,5 +21,7 @@
       </form>
       
   </div>
+
+  
 
 {% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block details %}
+  <h1>{{tag_by_id.name}}</h1>
+
+  <ul>
+    {% for post in tag_by_id.posts %}
+        <li> 
+            <a href="/posts/{{post.id}}">{{post.title}}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<div class=" d-flex justify-content-start ">
+    <a class="btn btn-primary m-1" href="/tags/{{tag_by_id.id}}/edit">Edit</a>
+     <button class="btn btn-danger m-1">Delete</button>
+ </div>
+
+{% endblock %}
